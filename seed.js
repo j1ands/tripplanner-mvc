@@ -78,15 +78,15 @@ mongoose.connection.on('open', function() {
 				);
 			},
 			function(err) {
-				models.Hotel.findOne(function(err, hotel) {
-					models.Day.create({
-						day_number: 10,
-						hotel: hotel
-					}, function() {
+				// models.Hotel.findOne(function(err, hotel) {
+				// 	models.Day.create({
+				// 		day_number: 10,
+				// 		hotel: hotel
+				// 	}, function() {
 						console.log("Finished inserting data");
 						console.log("Control-C to quit");
-					});
-				});
+				// 	});
+				// });
 			}
 		);
 	});

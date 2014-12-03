@@ -2,14 +2,24 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="/stylesheets/main.css">
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
 
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAfh6b7yuobvM7GYsQfM3GfFQiYXHPLKII&sensor=true"></script>
-		<script src="/javascripts/main.js"></script>
 	</head>
 	<body>
 		{% include 'partials/navbar.html' %}
 		{% block content %}
 		{% endblock %}
 		{% include 'partials/templates.html' %}
+		<script src="/bower_components/jquery/dist/jquery.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="/bower_components/underscore/underscore.js"></script>
+		<script src="/bower_components/backbone/backbone.js"></script>
+		<script src="/javascripts/day.model.js"></script>
+		<script src="/javascripts/day.collection.js"></script>
+		<script src="/javascripts/dayButton.view.js"></script>
+		<script src="/javascripts/trip.view.js"></script>
+		<script src="/javascripts/main.js"></script>
+
 	</body>
 </html>
