@@ -12,11 +12,20 @@ router.param('id', function(req, res, next, id) {
 })
 
 router.post('/', function(req, res, next) {
-	var day = new models.Day(req.body);
-	day.save(function(err) {
-		if (err) return next(err);
-		res.json(day);
+	// var day = new models.Day(req.body);
+	// day.save(function(err) {
+	// 	if (err) return next(err);
+	// 	res.json(day);
+	// });
+	models.Day.count({}, function(err, result){
+		if(err) return next(err);
+		models.Day.create({day_number: (result+1)}, function(err, success)
+		{
+			if(err) return next(err);
+			res.json(success);
+		});
 	});
+
 });
 
 router.get('/', function(req, res, next) {

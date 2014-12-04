@@ -16,7 +16,7 @@
             <div id="day-panel"></div>
         </div>
         <div class="col-xs-9">
-            <div class="row">
+            <div id="activity" class="row">
                 <div class="col-xs-4 hotels choose">
                     <h4>Hotels</h4>
                     <!-- activitySelectView -->
@@ -32,8 +32,16 @@
             </div>
             <!-- mapView -->
             <div id="map-canvas"></div>
-        <div>
+        </div>
     </div>
 </div>
 
 {% endblock %}
+
+<!-- autoescape false
+    set var hotels to {{ hotels | json }}
+    set var restaurants to {{ restaurants | json }}
+    set var thingsToDo to {{ thingsToDo | json }}
+ -->
+
+ 

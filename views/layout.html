@@ -11,14 +11,30 @@
 		{% block content %}
 		{% endblock %}
 		{% include 'partials/templates.html' %}
+
+		<script>
+ 
+		    {% autoescape false %}
+		    var all_hotels = {{ Hotel | json }};
+		    var all_restaurants = {{ Restaurant | json }};
+		    var all_things_to_do = {{ ThingToDo | json }};
+		    {% endautoescape %}
+		 
+		</script>
+
 		<script src="/bower_components/jquery/dist/jquery.js"></script>
 		<script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="/bower_components/underscore/underscore.js"></script>
 		<script src="/bower_components/backbone/backbone.js"></script>
-		<script src="/javascripts/day.model.js"></script>
-		<script src="/javascripts/day.collection.js"></script>
-		<script src="/javascripts/dayButton.view.js"></script>
-		<script src="/javascripts/trip.view.js"></script>
+		<script type="text/template" id="button_template">
+			<button class="btn btn-default btn-primary">Day <%= dayNum %></button>
+		</script>
+		<script src="/javascripts/views/activities/activitySelect.view.js"></script>
+		<script src="/javascripts/models/day.model.js"></script>
+		<script src="/javascripts/collections/day.collection.js"></script>
+		<script src="/javascripts/views/days/dayButton.view.js"></script>
+		<script src="/javascripts/models/trip.model.js"></script>
+		<script src="/javascripts/views/trip.view.js"></script>
 		<script src="/javascripts/main.js"></script>
 
 	</body>
