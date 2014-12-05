@@ -55,3 +55,12 @@
 		</div>
 	</div>
 </script>
+
+<!-- select template -->
+<script type="text/template" id="select_template">
+	<select>
+	<% activities.forEach(function(activity) { %>
+		<option value="<%= activity._id %>"><%= activity.name %></option>
+	<% }); %>
+	</select>
+</script>

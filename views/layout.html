@@ -15,9 +15,11 @@
 		<script>
  
 		    {% autoescape false %}
-		    var all_hotels = {{ Hotel | json }};
-		    var all_restaurants = {{ Restaurant | json }};
-		    var all_things_to_do = {{ ThingToDo | json }};
+		    var all_activities = {
+		    	hotels: {{Hotel | json}},
+		    	restaurants: {{Restaurant | json}},
+		    	thingsToDo: {{ThingToDo | json}}
+		    };
 		    {% endautoescape %}
 		 
 		</script>
@@ -29,12 +31,24 @@
 		<script type="text/template" id="button_template">
 			<button class="btn btn-default btn-primary">Day <%= dayNum %></button>
 		</script>
+
+		<!-- Activities -->
+		<!-- <script src="/javascripts/models/activity.model.js"></script> -->
+		<!-- <script src="/javascripts/collections/activity.collection.js"></script> -->
+		<!-- <script src="/javascripts/views/activities/activityOption.view.js"></script> -->
 		<script src="/javascripts/views/activities/activitySelect.view.js"></script>
+
+		<!-- Days -->
 		<script src="/javascripts/models/day.model.js"></script>
 		<script src="/javascripts/collections/day.collection.js"></script>
+		<script src="/javascripts/views/days/dayMarkers.view.js"></script>
 		<script src="/javascripts/views/days/dayButton.view.js"></script>
+		<script src="/javascripts/views/days/dayPanel.view.js"></script>
+
+		<!-- Trips -->
 		<script src="/javascripts/models/trip.model.js"></script>
 		<script src="/javascripts/views/trip.view.js"></script>
+		
 		<script src="/javascripts/main.js"></script>
 
 	</body>

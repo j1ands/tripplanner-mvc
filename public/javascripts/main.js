@@ -34,6 +34,8 @@ function populateDropdowns(tripView) {
 $(document).ready(function(){
 
 	// window.temp_days = new DaysCollection();
+
+	console.log(all_activities);
 	window.tripViewInstance = new TripView();
 
 	tripViewInstance.model.get('days').on("add", function(day){
