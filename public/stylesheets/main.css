@@ -34,3 +34,6 @@ body {
 
 #this-title {
   color: #428bca; }
+
+select {
+  width: 100%; }
